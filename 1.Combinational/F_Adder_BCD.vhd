@@ -12,11 +12,11 @@ entity F_Adder_BCD is
     );
     Port
     (
-		CI  : in  STD_LOGIC;
-        A   : in  STD_LOGIC_VECTOR (BITS-1 downto 0);
-		B   : in  STD_LOGIC_VECTOR (BITS-1 downto 0);
-		Z	: out STD_LOGIC_VECTOR (BITS-1 downto 0);
-		CO  : out STD_LOGIC
+	CI : in  STD_LOGIC;
+        A  : in  STD_LOGIC_VECTOR (BITS-1 downto 0);
+	B  : in  STD_LOGIC_VECTOR (BITS-1 downto 0);
+	Z  : out STD_LOGIC_VECTOR (BITS-1 downto 0);
+	CO : out STD_LOGIC
     );
 end F_Adder_BCD;
 
