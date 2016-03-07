@@ -20,13 +20,13 @@ architecture Behavioral of MUX is
 
 begin
 
-	-- One option
+    -- One option
     Z <= A when S = '0' else B;
 	
     -- Other option
-    --with S select
-        --Z <= A when '0',
-             --B when '1',
-             --B when others; -- Dummy (Needed for simulation)
+    --with S select Z <= 
+         -- A when '0',
+         --B when '1',
+         --B when others; -- Dummy (Needed for simulation)
 
 end Behavioral;
