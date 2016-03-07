@@ -8,8 +8,8 @@ entity BUFF_TRI is
     port
     (
         A : in  STD_LOGIC;
-		E : in  STD_LOGIC;
-		Z : out STD_LOGIC
+	E : in  STD_LOGIC;
+	Z : out STD_LOGIC
     );
 end BUFF_TRI;
 
