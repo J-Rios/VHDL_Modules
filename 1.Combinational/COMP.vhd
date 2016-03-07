@@ -8,7 +8,7 @@ entity COMP is
     port
     (
         A     : in  STD_LOGIC;
-		B     : in  STD_LOGIC;
+	B     : in  STD_LOGIC;
         Z     : out STD_LOGIC
     );
 end COMP;
