@@ -11,9 +11,9 @@ entity REG is
     );
     Port
     (
-        D   : in  STD_LOGIC_VECTOR (BITS-1 downto 0);
-	CLR : in  STD_LOGIC;
-        CLK : in  STD_LOGIC;
+	CLR : in    STD_LOGIC;
+        CLK : in    STD_LOGIC;
+        D   : in    STD_LOGIC_VECTOR (BITS-1 downto 0);
         Q   : inout STD_LOGIC_VECTOR (BITS-1 downto 0);
 	Qn  : inout STD_LOGIC_VECTOR (BITS-1 downto 0)
     );
