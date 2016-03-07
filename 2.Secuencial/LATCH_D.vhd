@@ -10,7 +10,7 @@ entity LATCH_D is
         CLK : in  STD_LOGIC;
         D   : in  STD_LOGIC;
         Q   : out STD_LOGIC;
-		Qn	: out STD_LOGIC
+	Qn  : out STD_LOGIC
     );
 end LATCH_D;
 
@@ -23,18 +23,18 @@ begin
 	-- One option
 	process(CLK)
 	begin
-		if (CLK'event and CLK = '1') then
-			Q  <= D;
-			Qn <= not(D);
-		end if;
+	    if (CLK'event and CLK = '1') then
+	        Q  <= D;
+		Qn <= not(D);
+	    end if;
 	end process;
 	
 	-- Other option
 --	process
 --	begin
---		wait until rising_edge(CLK);
---		Q <= D;
---		Qn <= not(D);
+--	    wait until rising_edge(CLK);
+--	    Q <= D;
+--	    Qn <= not(D);
 --	end process;
 
 end Behavioral;
