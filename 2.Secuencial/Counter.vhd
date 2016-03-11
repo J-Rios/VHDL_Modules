@@ -13,7 +13,7 @@ entity COUNTER is
     Port
     (
 	CLK : in  STD_LOGIC;
-        RST : in STD_LOGIC;
+	RST : in STD_LOGIC;
 	CE  : in STD_LOGIC;
 	TC  : out STD_LOGIC;
 	Q   : out STD_LOGIC_VECTOR (BITS-1 downto 0)
@@ -25,12 +25,13 @@ end COUNTER;
 architecture Behavioral of COUNTER is
     signal Qr : UNSIGNED (BITS-1 downto 0);
     signal Qn : UNSIGNED (BITS-1 downto 0);
+	signal TCsignal : STD_LOGIC;
 begin
 	
     process(RST, CLK, CE)
     begin
         if (CLK'event and CLK = '1') then -- Rising clock
-            if (CE = '1') then -- Chip enable active
+            if (CE = '1') then -- Clock enable active
                 if (RST = '1') then -- Reset active
                     Qr <= (others => '0'); -- Reset the count to zero
                 else
@@ -46,5 +47,7 @@ begin
     -- Output logic
     Q <= std_logic_vector(Qr); -- Output vector
     TC <= '1' when Qr = (2**BITS-1) else '0'; -- Tick-Count bit (End-count)
+	TCsignal <= TC;
+	CEO <= '1' when (TCsignal = '1' and CE = '1') else '0'; -- Clock Enable Out
 
 end Behavioral;
