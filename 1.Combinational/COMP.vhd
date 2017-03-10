@@ -22,6 +22,8 @@ entity COMP is
     );
 end COMP;
 
+----------------------------------------------------------------------------------
+
 architecture BEHAVIORAL of COMP is
 begin
 
