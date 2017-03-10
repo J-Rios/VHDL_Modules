@@ -1,3 +1,16 @@
+----------------------------------------------------------------------------------
+--                                                                              --
+--                           -------------------                                --
+--                          |                   |                               --
+--          A[3:0] ---------| A                 |                               --
+--                          |                   |                               --
+--                          |                 Z |--------- Z[7:0]               --
+--                          |                   |                               --
+--              DP ---------| DP                |                               --
+--                          |                   |                               --
+--                           -------------------                                --
+--                                                                              --
+----------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -21,7 +34,6 @@ architecture Behavioral of BCD_7SEG is
     signal point : STD_LOGIC;
 begin
 
-    -- One option
     with A select
     digit <= "1000000" when "0000", -- 0
              "1111001" when "0001", -- 1
@@ -41,33 +53,7 @@ begin
              "0001110" when "1111", -- F
              "1111111" when others;
     point <= DP;
-    
+
     Z <= point & digit;
-	
-    -- Other option
-    --  process(MUXOUT)
-    --  begin
-    --      case MUXOUT is
-    --          when "0000" => SSEG <= "1000000"; -- 0
-    --          when "0001" => SSEG <= "1111001"; -- 1
-    --          when "0010" => SSEG <= "0100100"; -- 2 
-    --          when "0011" => SSEG <= "0110000"; -- 3
-    --          when "0100" => SSEG <= "0011001"; -- 4
-    --          when "0101" => SSEG <= "0010010"; -- 5
-    --          when "0110" => SSEG <= "0000010"; -- 6
-    --          when "0111" => SSEG <= "1111000"; -- 7
-    --          when "1000" => SSEG <= "0000000"; -- 8
-    --          when "1001" => SSEG <= "0010000"; -- 9
-    --          when "1010" => SSEG <= "0001000"; -- A
-    --          when "1011" => SSEG <= "0000011"; -- b
-    --          when "1100" => SSEG <= "1000110"; -- C
-    --          when "1101" => SSEG <= "0100001"; -- d
-    --          when "1110" => SSEG <= "0000110"; -- E
-    --          when "1111" => SSEG <= "0001110"; -- F
-    --      end case;
-    --  end process;
-    --  point <= DP;
-    --  
-    --  Z <= point & digit;
     
 end Behavioral;
