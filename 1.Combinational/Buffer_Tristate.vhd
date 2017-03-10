@@ -31,5 +31,3 @@ begin
             'Z' when others; -- Dummy (Needed for simulation)
 	
 end BEHAVIORAL;
-
-----------------------------------------------------------------------------------
