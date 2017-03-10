@@ -28,6 +28,8 @@ entity COMP_BCD is
     );
 end COMP_BCD;
 
+----------------------------------------------------------------------------------
+
 architecture BEHAVIORAL of COMP_BCD is
 begin
 
